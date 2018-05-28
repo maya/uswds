@@ -35,6 +35,8 @@ $if-scope-normalize: null;
   $if-scope-normalize: '.#{ns('system')} ';
 }
 
+$top-level-component: '#{$if-scope-normalize}.#{ns("component")}';
+
 /*
 ----------------------------------------
 Spacing
