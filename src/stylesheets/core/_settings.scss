@@ -18,6 +18,9 @@ Namespace
 */
 
 $theme-namespace: (
+  'system': (
+    namespace:  'uswds'
+  ),
   'component': (
     namespace:  'usa-',
     output:     true,
@@ -35,6 +38,8 @@ $theme-namespace: (
     output:     false,
   ),
 ) !default;
+
+$theme-scope-normalize: false !default;
 
 /*
 ----------------------------------------

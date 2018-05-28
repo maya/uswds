@@ -30,6 +30,11 @@ $ns-component: ns('component');
 $ns-utility: ns('utility');
 $ns-grid: ns('grid');
 
+$if-scope-normalize: null;
+@if $theme-scope-normalize {
+  $if-scope-normalize: '.#{ns('system')} ';
+}
+
 /*
 ----------------------------------------
 Spacing

@@ -1,6 +1,6 @@
 $theme-banner-font: sans;
 
-.#{ns('component')} {
+#{$if-scope-normalize}.#{ns('component')} {
   &banner {
     @include u-bg($base-lighter);
 
@@ -11,7 +11,7 @@ $theme-banner-font: sans;
   }
 }
 
-.#{ns('component')} {
+#{$if-scope-normalize}.#{ns('component')} {
   &banner-content {
     @include grid-container($site-max-width);
     @include u-bg(transparent);
@@ -35,7 +35,7 @@ $theme-banner-font: sans;
   }
 }
 
-.#{ns('component')}banner-guidance-gov {
+#{$if-scope-normalize}.#{ns('component')}banner-guidance-gov {
   @include u-padding-top(2);
 
   @include at-media('tablet') {
@@ -43,7 +43,7 @@ $theme-banner-font: sans;
   }
 }
 
-.#{ns('component')}banner-guidance-ssl {
+#{$if-scope-normalize}.#{ns('component')}banner-guidance-ssl {
   @include u-padding-top(2);
 
   @include at-media('tablet') {
@@ -51,7 +51,7 @@ $theme-banner-font: sans;
   }
 }
 
-.#{ns('component')}banner-inner {
+#{$if-scope-normalize}.#{ns('component')}banner-inner {
   @include grid-container($site-max-width);
   @include grid-row;
   @include u-flex(align-start);
@@ -68,7 +68,7 @@ $theme-banner-font: sans;
   }
 }
 
-.#{ns('component')}banner-header {
+#{$if-scope-normalize}.#{ns('component')}banner-header {
   @include u-padding-y(1);
   @include u-position(relative);
   @include u-size($theme-banner-font, 1);
@@ -85,27 +85,12 @@ $theme-banner-font: sans;
     @include u-padding-top(.5);
     @include u-size($theme-banner-font, 1);
     @include u-text($base-dark);
-
-    .#{ns('component')}banner-header-expanded & {
-      @include u-display(block);
-
-      @include at-media('tablet') {
-        @include u-display(none);
-      }
-    }
   }
 
   &-text {
     @include u-line-height($theme-banner-font, 2);
     @include u-margin-y(0);
     @include u-size($theme-banner-font, 1);
-    .#{ns('component')}banner-header-expanded & {
-      @include u-display('none');
-
-      @include at-media('tablet') {
-        @include u-display(block);
-      }
-    }
   }
 
   &-action {
@@ -116,10 +101,6 @@ $theme-banner-font: sans;
     @include u-text($primary);
 
     @include at-media('tablet') {
-      @include u-display(none);
-    }
-
-    .#{ns('component')}banner-header-expanded & {
       @include u-display(none);
     }
 
@@ -137,18 +118,10 @@ $theme-banner-font: sans;
       @include u-margin-right(1);
       @include u-padding-top(0);
     }
-
-    .#{ns('component')}banner-header-expanded & {
-      @include u-display('none');
-
-      @include at-media('tablet') {
-        @include u-display(block);
-      }
-    }
   }
 }
 
-.#{ns('component')}banner-header-expanded {
+#{$if-scope-normalize}.#{ns('component')}banner-header-expanded {
   @include u-minh(4);
 
   @include at-media('tablet') {
@@ -157,6 +130,34 @@ $theme-banner-font: sans;
     @include u-padding-right(0);
     @include u-size($theme-banner-font, 1);
     @include u-text(normal);
+  }
+
+  .#{ns('component')}banner-header-close-text {
+    @include u-display(block);
+
+    @include at-media('tablet') {
+      @include u-display(none);
+    }
+  }
+
+  .#{ns('component')}banner-header-text {
+    @include u-display('none');
+
+    @include at-media('tablet') {
+      @include u-display(block);
+    }
+  }
+
+  .#{ns('component')}banner-header-action {
+    @include u-display(none);
+  }
+
+  .#{ns('component')}banner-header-flag {
+    @include u-display(none);
+
+    @include at-media('tablet') {
+      @include u-display(block);
+    }
   }
 
   > .#{ns('component')}banner-inner {
@@ -168,7 +169,7 @@ $theme-banner-font: sans;
   }
 }
 
-.#{ns('component')}banner-button {
+#{$if-scope-normalize}.#{ns('component')}banner-button {
   @include add-pin(left);
   @include button-unstyled;
   @include u-display(block);
@@ -231,7 +232,7 @@ $theme-banner-font: sans;
   }
 }
 
-.#{ns('component')}banner-button-text {
+#{$if-scope-normalize}.#{ns('component')}banner-button-text {
   @include add-sr-only;
 
   @include at-media('tablet') {
@@ -240,6 +241,6 @@ $theme-banner-font: sans;
   }
 }
 
-.#{ns('component')}banner-icon {
+#{$if-scope-normalize}.#{ns('component')}banner-icon {
   @include u-width(5);
 }
