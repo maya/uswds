@@ -1,19 +1,59 @@
 html {
-  font-family: $font-sans;
-  font-size: $em-base;
+  @include u-family(sans);
+  font-size: $theme-root-font-size;
 }
 
 body {
-  font-size: $base-font-size;
+  @include u-size(sans, sm);
 }
 
-p {
+#{$top-level-component}prose-p {
   line-height: $base-line-height;
   margin-bottom: 1em;
   margin-top: 1em;
 }
 
-a {
+#{$top-level-component}prose-h1,
+#{$top-level-component}prose-h2,
+#{$top-level-component}prose-h3,
+#{$top-level-component}prose-h4,
+#{$top-level-component}prose-h5 {
+  clear: both;
+  font-family: $font-serif;
+  line-height: $heading-line-height;
+  margin-bottom: .5em;
+  margin-top: 1.5em;
+}
+
+#{$top-level-component}prose-h6 {
+  font-family: $font-sans;
+}
+
+#{$top-level-component}prose-h1 {
+  @include h1();
+}
+
+#{$top-level-component}prose-h2 {
+  @include h2();
+}
+
+#{$top-level-component}prose-h3 {
+  @include h3();
+}
+
+#{$top-level-component}prose-h4 {
+  @include h4();
+}
+
+#{$top-level-component}prose-h5 {
+  @include h5();
+}
+
+#{$top-level-component}prose-h6 {
+  @include h6();
+}
+
+#{$top-level-component}prose-a {
   color: $color-primary;
   text-decoration: underline;
 
@@ -50,56 +90,27 @@ a {
   }
 }
 
+#{$top-level-component}prose {
+  p { @extend #{$top-level-component}prose-p; }
+  h1 { @extend #{$top-level-component}prose-h1; }
+  h2 { @extend #{$top-level-component}prose-h2; }
+  h3 { @extend #{$top-level-component}prose-h3; }
+  h4 { @extend #{$top-level-component}prose-h4; }
+  h5 { @extend #{$top-level-component}prose-h5; }
+  h6 { @extend #{$top-level-component}prose-h6; }
+  a { @extend #{$top-level-component}prose-a; }
+}
+
 // External link consider "effortless style approach":
 // [href^="http:"]:not([href*="my-domain.com"])
 // [href^="https:"]:not([href*="my-domain.com"])
 
-.usa-external_link {
+#{$top-level-component}external_link {
   @include external-link(external-link, external-link-hover);
 }
 
-.usa-external_link-alt {
+#{$top-level-component}external_link-alt {
   @include external-link(external-link-alt, external-link-alt-hover);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  clear: both;
-  font-family: $font-serif;
-  line-height: $heading-line-height;
-  margin-bottom: .5em;
-  margin-top: 1.5em;
-}
-
-h6 {
-  font-family: $font-sans;
-}
-
-h1 {
-  @include h1();
-}
-
-h2 {
-  @include h2();
-}
-
-h3 {
-  @include h3();
-}
-
-h4 {
-  @include h4();
-}
-
-h5 {
-  @include h5();
-}
-
-h6 {
-  @include h6();
 }
 
 // Remove user agent styles
@@ -113,7 +124,8 @@ dfn {
 
 // Custom typography
 
-.usa-content {
+#{$top-level-component}content,
+#{$top-level-component}prose {
   p,
   ul:not(.usa-accordion):not(.usa-accordion-bordered),
   ol:not(.usa-accordion):not(.usa-accordion-bordered) {
@@ -121,11 +133,11 @@ dfn {
   }
 }
 
-.usa-content-list {
+#{$top-level-component}content-list {
   max-width: $text-max-width;
 }
 
-.usa-sans {
+#{$top-level-component}sans {
   p,
   a,
   li,
@@ -139,7 +151,7 @@ dfn {
   }
 }
 
-.usa-serif {
+#{$top-level-component}serif {
   p,
   a,
   li,
@@ -148,7 +160,7 @@ dfn {
   }
 }
 
-.usa-display {
+#{$top-level-component}isplay {
   @include h3();
   margin-bottom: 0;
 
@@ -161,7 +173,7 @@ dfn {
   }
 }
 
-.usa-font-lead {
+#{$top-level-component}font-lead {
   font-family: $font-serif;
   font-size: $lead-font-size;
   font-weight: $font-normal;
@@ -169,7 +181,7 @@ dfn {
   max-width: $lead-max-width;
 }
 
-.usa-background-dark {
+#{$top-level-component}background-dark {
   background-color: $color-gray-dark;
 
   p,
@@ -186,16 +198,16 @@ dfn {
   }
 }
 
-.usa-text-small {
+#{$top-level-component}text-small {
   font-size: $h6-font-size;
   margin-top: 0;
 }
 
 // Removes top margin from first child and bottom margin from last child on
 // elements when they are within those layout elements.
-.usa-section,
-.usa-grid,
-.usa-grid-full {
+#{$top-level-component}section,
+#{$top-level-component}grid,
+#{$top-level-component}grid-full {
   > :first-child {
     margin-top: 0;
   }
@@ -205,15 +217,15 @@ dfn {
   }
 }
 
-.usa-width-one-whole,
-.usa-width-one-half,
-.usa-width-one-third,
-.usa-width-two-thirds,
-.usa-width-one-fourth,
-.usa-width-three-fourths,
-.usa-width-one-sixth,
-.usa-width-five-sixths,
-.usa-width-one-twelfth {
+#{$top-level-component}width-one-whole,
+#{$top-level-component}width-one-half,
+#{$top-level-component}width-one-third,
+#{$top-level-component}width-two-thirds,
+#{$top-level-component}width-one-fourth,
+#{$top-level-component}width-three-fourths,
+#{$top-level-component}width-one-sixth,
+#{$top-level-component}width-five-sixths,
+#{$top-level-component}width-one-twelfth {
   &:first-child {
     > :first-child {
       margin-top: 0;
