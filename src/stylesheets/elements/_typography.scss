@@ -90,6 +90,7 @@ body {
   }
 }
 
+#{$top-level-component}content,
 #{$top-level-component}prose {
   p { @extend #{$top-level-component}prose-p; }
   h1 { @extend #{$top-level-component}prose-h1; }
